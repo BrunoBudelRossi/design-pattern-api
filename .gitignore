@@ -1,0 +1,11 @@
+node_modules
+
+# dotenv arquivos com variáveis de ambiente
+.env
+.env.test
+
+# Diretório de distribuição
+dist/
+
+yarn-error.log*
+yarn.lock
