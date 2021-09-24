@@ -1,7 +1,9 @@
 import express from 'express';
 import { json, urlencoded } from 'express';
 import cors from 'cors';
+import 'reflect-metadata';
 
+import './database/connection';
 import router from './routes';
 
 export const app = express();

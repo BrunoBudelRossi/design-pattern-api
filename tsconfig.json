@@ -14,9 +14,11 @@
         "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
         "paths": {
-            "@controllers/*": ["./src/interfaces/controllers/*"],
-            "@models/*": ["./src/interfaces/models/*"]
-        }
+            "@controllers/*": ["./src/controllers/*"],
+            "@models/*": ["./src/models/*"]
+        },
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
     },
     "include": ["./**/*"],
     "exclude": [
