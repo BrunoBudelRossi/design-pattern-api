@@ -5,7 +5,7 @@
     "username": "postgres",
     "password": "root",
     "database": "design-pattern-problems",
-    "logging": false,
+    "logging": true,
     "entities": ["src/models/*.{ts,js}"],
     "migrations": ["src/database/migrations/**/*.{ts,js}"],
     "cli": {
