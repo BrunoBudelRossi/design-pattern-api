@@ -14,7 +14,6 @@
     },
     "author": "BrunoBudelRossi <brunobudelrossi3745@outlook.com>",
     "license": "MIT",
-    "type": "module",
     "dependencies": {
         "bcrypt": "^5.0.1",
         "cors": "^2.8.5",
