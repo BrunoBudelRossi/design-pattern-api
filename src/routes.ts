@@ -8,7 +8,7 @@ import userRouter from './routes/userRouter';
 
 const router = Router();
 
-router.use('/users', authMiddleware, userRouter);
+router.use('/users', userRouter);
 router.use('/auth', authRouter);
 
 // Request made to non-existent resource
