@@ -10,8 +10,6 @@ export const app = express();
 
 app.disable('x-powered-by');
 
-app.use(express.static(__dirname));
-
 const corsOptions: cors.CorsOptions = {
     origin: '*',
     methods: 'GET,PUT,POST,DELETE',
