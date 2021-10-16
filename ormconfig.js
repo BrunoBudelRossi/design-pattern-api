@@ -3,14 +3,8 @@ if (process.env.NODE_ENV === 'development')
         type: 'postgres',
         url: process.env.DATABASE_URL,
         logging: true,
-        entities:
-            process.env.NODE_ENV === 'development'
-                ? ['src/models/*.{ts,js}']
-                : ['dist/models/*.js'],
-        migrations:
-            process.env.NODE_ENV === 'development'
-                ? ['src/database/migrations/**/*.{ts,js}']
-                : ['dist/database/migrations/**/*.js'],
+        entities: ['src/models/*.{ts,js}'],
+        migrations: ['src/database/migrations/**/*.{ts,js}'],
         cli: {
             entitiesDir: 'src/models',
             migrationsDir: ['src/database/migrations'],
@@ -26,14 +20,8 @@ else
                 rejectUnauthorized: false,
             },
         },
-        entities:
-            process.env.NODE_ENV === 'development'
-                ? ['src/models/*.{ts,js}']
-                : ['dist/models/*.js'],
-        migrations:
-            process.env.NODE_ENV === 'development'
-                ? ['src/database/migrations/**/*.{ts,js}']
-                : ['dist/database/migrations/**/*.js'],
+        entities: ['dist/models/*.js'],
+        migrations: ['dist/database/migrations/**/*.js'],
         cli: {
             entitiesDir: 'src/models',
             migrationsDir: ['src/database/migrations'],

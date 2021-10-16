@@ -12,14 +12,11 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
-        "paths": {
-            "@controllers/*": ["./src/controllers/*"],
-            "@models/*": ["./src/models/*"]
-        },
         "emitDecoratorMetadata": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "strictPropertyInitialization": false
     },
-    "include": ["./**/*"],
+    "include": ["src/**/*"],
     "exclude": [
         "./plugins/**/*",
         "./typings/**/*",

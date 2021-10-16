@@ -34,7 +34,7 @@ class AuthController {
 
             const token = jwt.sign(
                 { userId: user.id, userEmail: user.email },
-                process.env.SECRET
+                process.env.SECRET as string
             );
             return res.status(201).json({
                 status: 'success',
@@ -44,7 +44,8 @@ class AuthController {
         } catch (err) {
             return res.status(500).json({
                 status: 'error',
-                message: err.message || 'Error while authenticate user',
+                message:
+                    (err as Error).message || 'Error while authenticate user',
                 payload: [err],
             });
         }

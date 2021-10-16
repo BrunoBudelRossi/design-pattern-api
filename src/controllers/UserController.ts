@@ -17,7 +17,8 @@ class UserController {
         } catch (err) {
             return res.status(500).json({
                 status: 'error',
-                message: err.message || 'Error while finding all users',
+                message:
+                    (err as Error).message || 'Error while finding all users',
                 payload: [err],
             });
         }
@@ -51,7 +52,8 @@ class UserController {
         } catch (err) {
             return res.status(500).json({
                 status: 'error',
-                message: err.message || 'Error while create new user',
+                message:
+                    (err as Error).message || 'Error while create new user',
                 payload: [err],
             });
         }
@@ -83,7 +85,7 @@ class UserController {
         } catch (err) {
             return res.status(500).json({
                 status: 'error',
-                message: err.message || 'Error while update user',
+                message: (err as Error).message || 'Error while update user',
                 payload: [err],
             });
         }
@@ -104,7 +106,7 @@ class UserController {
         } catch (err) {
             return res.status(500).json({
                 status: 'error',
-                message: err.message || 'Error while delete user',
+                message: (err as Error).message || 'Error while delete user',
                 payload: [err],
             });
         }

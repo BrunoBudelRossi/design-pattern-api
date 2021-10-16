@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
@@ -14,12 +15,12 @@ export default (req: Request, res: Response, next: NextFunction) => {
     const token = authorization.replace('Bearer', '').trim();
 
     try {
-        jwt.verify(token, process.env.SECRET);
+        jwt.verify(token, process.env.SECRET as string);
         next();
     } catch (err) {
         return res.status(401).json({
             status: 'error',
-            message: err.message,
+            message: (err as Error).message,
         });
     }
 };
