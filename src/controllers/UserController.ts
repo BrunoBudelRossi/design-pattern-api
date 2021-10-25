@@ -65,15 +65,11 @@ class UserController {
             const { email, password } = req.body;
             const { userId } = req.params;
 
-            // await repository.update({ id: userId }, { email, password });
+            await repository.update({ id: userId }, { email, password });
 
-            // const user = await repository.findOne({
-            //     where: { id: userId },
-            // });
-
-            await repository.delete({ id: userId });
-
-            const user = repository.create({ id: userId, email, password });
+            const user = await repository.findOne({
+                where: { id: userId },
+            });
 
             await repository.save(user);
 
