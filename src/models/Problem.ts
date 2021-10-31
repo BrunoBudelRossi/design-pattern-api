@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import Answer from './Answer';
 
 export enum ProblemDifficulty {
     BEGGINER = 'begginer',
@@ -23,4 +24,7 @@ export default class Problem {
         default: ProblemDifficulty.MEDIUM,
     })
     level: ProblemDifficulty;
+
+    @OneToMany(() => Answer, (problem) => Problem)
+    answers: Answer[];
 }
