@@ -28,16 +28,13 @@ class AnswerController {
     async store(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Answer);
-            // const userRepository = getRepository(User);
-            const { used_time, number_tips_used, is_correct, user, problem } =
+            const { usedTime, numberTipsUsed, isCorrect, user, problem } =
                 req.body;
 
-            // const userInstance = userRepository.findOne({ id: user.id });
-
             const answer = repository.create({
-                used_time,
-                number_tips_used,
-                is_correct,
+                usedTime,
+                numberTipsUsed,
+                isCorrect,
                 user,
                 problem,
             });
@@ -62,16 +59,16 @@ class AnswerController {
     async update(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Answer);
-            const { used_time, number_tips_used, is_correct, user, problem } =
+            const { usedTime, numberTipsUsed, isCorrect, user, problem } =
                 req.body;
             const { answerId } = req.params;
 
             await repository.delete({ id: answerId });
             const answer = repository.create({
                 id: answerId,
-                used_time,
-                number_tips_used,
-                is_correct,
+                usedTime,
+                numberTipsUsed,
+                isCorrect,
                 user,
                 problem,
             });

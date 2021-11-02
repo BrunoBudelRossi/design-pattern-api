@@ -1,12 +1,15 @@
 import { Router } from 'express';
-import AnswerController from '../controllers/UserController';
+import AnswerController from '../controllers/AnswerController';
 
-const userRouter = Router();
+const answerRouter = Router();
 
-userRouter.route('/').get(AnswerController.index).post(AnswerController.store);
-userRouter
+answerRouter
+    .route('/')
+    .get(AnswerController.index)
+    .post(AnswerController.store);
+answerRouter
     .route('/:answerId')
     .put(AnswerController.update)
     .delete(AnswerController.delete);
 
-export default userRouter;
+export default answerRouter;

@@ -1,15 +1,15 @@
 import { Router } from 'express';
 import ProblemController from '../controllers/ProblemController';
 
-const userRouter = Router();
+const probleRouter = Router();
 
-userRouter
+probleRouter
     .route('/')
     .get(ProblemController.index)
     .post(ProblemController.store);
-userRouter
+probleRouter
     .route('/:problemId')
     .put(ProblemController.update)
     .delete(ProblemController.delete);
 
-export default userRouter;
+export default probleRouter;

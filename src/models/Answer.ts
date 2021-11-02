@@ -8,23 +8,23 @@ export default class Answer {
     id: string;
 
     @Column()
-    used_time: number;
+    usedTime: number;
 
     @Column()
-    number_tips_used: number;
+    numberTipsUsed: number;
 
     @Column()
-    is_correct: boolean;
+    isCorrect: boolean;
 
     @ManyToOne(() => Problem, (answers) => Answer, {
         cascade: true,
         eager: true,
     })
-    problem: string;
+    problem: Problem[];
 
     @ManyToOne(() => User, (answers) => Answer, {
         cascade: true,
         eager: true,
     })
-    user: string;
+    user: User[];
 }

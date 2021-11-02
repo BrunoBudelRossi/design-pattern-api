@@ -11,7 +11,7 @@ class UserController {
 
             return res.status(200).json({
                 status: 'success',
-                message: 'All clients returned successfully',
+                message: 'All users returned successfully',
                 payload: users,
             });
         } catch (err) {
