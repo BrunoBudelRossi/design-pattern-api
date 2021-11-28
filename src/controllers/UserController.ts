@@ -7,7 +7,9 @@ class UserController {
         try {
             const repository = getRepository(User);
 
-            const users = await repository.find({ select: ['id', 'email'] });
+            const users = await repository.find({
+                select: ['id', 'email', 'name'],
+            });
 
             return res.status(200).json({
                 status: 'success',
@@ -27,7 +29,7 @@ class UserController {
     async store(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(User);
-            const { email, password } = req.body;
+            const { email, password, name } = req.body;
 
             const existsUser = await repository.findOne({
                 where: { email },
@@ -40,7 +42,7 @@ class UserController {
                 });
             }
 
-            const user = repository.create({ email, password });
+            const user = repository.create({ email, password, name });
 
             await repository.save(user);
 
@@ -62,11 +64,16 @@ class UserController {
     async update(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(User);
-            const { email, password } = req.body;
+            const { email, password, name } = req.body;
             const { userId } = req.params;
 
             await repository.delete({ id: userId });
-            const user = repository.create({ id: userId, email, password });
+            const user = repository.create({
+                id: userId,
+                email,
+                password,
+                name,
+            });
 
             await repository.save(user);
 
