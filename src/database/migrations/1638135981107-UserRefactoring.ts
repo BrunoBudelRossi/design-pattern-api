@@ -5,7 +5,7 @@ export class UserRefactoring1638135981107 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(
-            `ALTER TABLE "public"."users" ADD "name" character varying NOT NULL`
+            `ALTER TABLE "public"."users" ADD "name" character varying DEFAULT NULL`
         );
     }
 
