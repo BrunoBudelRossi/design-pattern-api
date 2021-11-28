@@ -8,8 +8,11 @@ import userRouter from './routes/userRouter';
 import problemRouter from './routes/problemRouter';
 import answerRouter from './routes/answerRouter';
 
+import UserController from './controllers/UserController';
+
 const router = Router();
 
+router.post('/users', UserController.store);
 router.use('/users', authMiddleware, userRouter);
 router.use('/problems', authMiddleware, problemRouter);
 router.use('/answers', authMiddleware, answerRouter);
