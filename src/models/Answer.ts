@@ -16,6 +16,9 @@ export default class Answer {
     @Column()
     isCorrect: boolean;
 
+    @Column()
+    points: number;
+
     @ManyToOne(() => Problem, (answers) => Answer, {
         cascade: true,
         eager: true,

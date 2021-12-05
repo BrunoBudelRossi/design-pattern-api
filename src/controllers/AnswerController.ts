@@ -28,13 +28,20 @@ class AnswerController {
     async store(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Answer);
-            const { usedTime, numberTipsUsed, isCorrect, user, problem } =
-                req.body;
+            const {
+                usedTime,
+                numberTipsUsed,
+                isCorrect,
+                points,
+                user,
+                problem,
+            } = req.body;
 
             const answer = repository.create({
                 usedTime,
                 numberTipsUsed,
                 isCorrect,
+                points,
                 user,
                 problem,
             });
@@ -59,8 +66,14 @@ class AnswerController {
     async update(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Answer);
-            const { usedTime, numberTipsUsed, isCorrect, user, problem } =
-                req.body;
+            const {
+                usedTime,
+                numberTipsUsed,
+                isCorrect,
+                points,
+                user,
+                problem,
+            } = req.body;
             const { answerId } = req.params;
 
             await repository.delete({ id: answerId });
@@ -69,6 +82,7 @@ class AnswerController {
                 usedTime,
                 numberTipsUsed,
                 isCorrect,
+                points,
                 user,
                 problem,
             });
