@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import ProblemController from '../controllers/ProblemController';
 
-const probleRouter = Router();
+const probleRouter = Router({ mergeParams: true });
 
 probleRouter
     .route('/')
