@@ -33,7 +33,7 @@ class AuthController {
             }
 
             const token = jwt.sign(
-                { userId: user.id, userEmail: user.email },
+                { userName: user.name, userId: user.id, userEmail: user.email },
                 process.env.SECRET as string
             );
             return res.status(201).json({
