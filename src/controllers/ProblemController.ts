@@ -14,7 +14,7 @@ class ProblemController {
                 const { id, description, options, level } = problem;
                 const arrOptions = options.split('|');
 
-                return { id, description, option: arrOptions, level };
+                return { id, description, options: arrOptions, level };
             });
 
             return res.status(200).json({
