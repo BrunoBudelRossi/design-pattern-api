@@ -10,10 +10,17 @@ class ProblemController {
 
             const problems = await repository.find();
 
+            const result = problems.map((problem) => {
+                const { id, description, options, level } = problem;
+                const arrOptions = options.split('|');
+
+                return { id, description, arrOptions, level };
+            });
+
             return res.status(200).json({
                 status: 'success',
                 message: 'All problems returned successfully',
-                payload: problems,
+                payload: result,
             });
         } catch (err) {
             return res.status(500).json({
