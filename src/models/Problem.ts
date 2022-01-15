@@ -18,6 +18,9 @@ export default class Problem {
     @Column()
     options: string;
 
+    @Column()
+    tips: string;
+
     @Column({
         type: 'enum',
         enum: ProblemDifficulty,

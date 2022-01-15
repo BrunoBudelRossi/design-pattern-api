@@ -6,15 +6,21 @@ class ProblemController {
     async index(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Problem);
-            console.log(repository);
 
             const problems = await repository.find();
 
             const result = problems.map((problem) => {
-                const { id, description, options, level } = problem;
+                const { id, description, options, tips, level } = problem;
                 const arrOptions = options.split('|');
+                const arrTips = tips.split('|');
 
-                return { id, description, options: arrOptions, level };
+                return {
+                    id,
+                    description,
+                    options: arrOptions,
+                    tips: arrTips,
+                    level,
+                };
             });
 
             return res.status(200).json({
@@ -36,7 +42,7 @@ class ProblemController {
     async store(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Problem);
-            const { description, options, level } = req.body;
+            const { description, options, tips, level } = req.body;
 
             const existsProblem = await repository.findOne({
                 where: { description },
@@ -49,7 +55,12 @@ class ProblemController {
                 });
             }
 
-            const problem = repository.create({ description, options, level });
+            const problem = repository.create({
+                description,
+                options,
+                tips,
+                level,
+            });
 
             await repository.save(problem);
 
@@ -71,12 +82,12 @@ class ProblemController {
     async update(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Problem);
-            const { description, options, level } = req.body;
+            const { description, options, tips, level } = req.body;
             const { problemId } = req.params;
 
             await repository.update(
                 { id: problemId },
-                { description, options, level }
+                { description, options, tips, level }
             );
 
             const problem = await repository.findOne({
