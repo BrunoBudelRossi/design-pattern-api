@@ -21,6 +21,9 @@ export default class Problem {
     @Column()
     tips: string;
 
+    @Column()
+    correctAnswer: string;
+
     @Column({
         type: 'enum',
         enum: ProblemDifficulty,
