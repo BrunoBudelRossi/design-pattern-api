@@ -10,7 +10,8 @@ class ProblemController {
             const problems = await repository.find();
 
             const result = problems.map((problem) => {
-                const { id, description, options, tips, level } = problem;
+                const { id, description, options, tips, correctAnswer, level } =
+                    problem;
                 const arrOptions = options.split('|');
                 const arrTips = tips.split('|');
 
@@ -19,6 +20,7 @@ class ProblemController {
                     description,
                     options: arrOptions,
                     tips: arrTips,
+                    correctAnswer,
                     level,
                 };
             });
@@ -42,7 +44,8 @@ class ProblemController {
     async store(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Problem);
-            const { description, options, tips, level } = req.body;
+            const { description, options, tips, correctAnswer, level } =
+                req.body;
 
             const existsProblem = await repository.findOne({
                 where: { description },
@@ -59,6 +62,7 @@ class ProblemController {
                 description,
                 options,
                 tips,
+                correctAnswer,
                 level,
             });
 
@@ -82,12 +86,13 @@ class ProblemController {
     async update(req: Request, res: Response): Promise<Response> {
         try {
             const repository = getRepository(Problem);
-            const { description, options, tips, level } = req.body;
+            const { description, options, tips, correctAnswer, level } =
+                req.body;
             const { problemId } = req.params;
 
             await repository.update(
                 { id: problemId },
-                { description, options, tips, level }
+                { description, options, tips, correctAnswer, level }
             );
 
             const problem = await repository.findOne({
