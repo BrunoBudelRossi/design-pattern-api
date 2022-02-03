@@ -6,7 +6,7 @@ export class SeedProblems1643636233027 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         this.ids.push(
             await queryRunner.query(
-                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Bridge, Decorator, Façade (fachada), Proxy  e Flyweight são exemplos de padrões gof:', 'Criacionais|Comportamentais|Estruturais|De persistência', 'begginer', '', 'Estruturais') RETURNING id`
+                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Bridge, Decorator, Façade (fachada), Proxy  e Flyweight são exemplos de padrões gof:', 'Criacionais|Comportamentais|Estruturais|De persistência', 'Estágiario', 'Este grupo explica como montar objetos e classes em estruturas maiores, mas ainda mantendo essas estruturas flexíveis e eficientes.', 'Estruturais') RETURNING id`
             )
         );
     }
