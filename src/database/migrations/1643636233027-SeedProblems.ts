@@ -119,13 +119,13 @@ export class SeedProblems1643636233027 implements MigrationInterface {
                 II. Converte a interface de uma classe em outra interface esperada pelos clientes permitindo que certas classes trabalhem em conjunto, pois de outra forma, seria impossível por causa de suas interfaces incompatíveis.
                 
                 III. Fornece uma maneira de acessar sequencialmente os elementos de uma agregação de objetos sem expor sua representação subjacente.
-                Os padrões de projeto apresentados em I, II e III são, respectivamente:', 'Façade, Builder e Mediator|Abstract Factory, Adapter e Iterator|Façade, Adapter e Interpreter|Singleton, Builder e Mediator|Abstract Factory, Prototype e Iterator', 'Master', 'DICA', 'Abstract Factory, Adapter e Iterator') RETURNING id`
+                Os padrões de projeto apresentados em I, II e III são, respectivamente:', 'Façade, Builder e Mediator|Abstract Factory, Adapter e Iterator|Façade, Adapter e Interpreter|Singleton, Builder e Mediator|Abstract Factory, Prototype e Iterator', 'Master', 'Os padrões são do tipo criacional, estrutural e comportamental, respectivamente.', 'Abstract Factory, Adapter e Iterator') RETURNING id`
             )
         );
         // 17
         this.ids.push(
             await queryRunner.query(
-                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('No contexto de padrões de projeto GoF, há um padrão que tem como definição garantir que uma classe tenha apenas uma instância de si mesma e que forneça um ponto global de acesso. Assinale-o. ', 'Builder|Factory|Proxy|Singleton|Strategy', 'Sênior', 'DICA', 'Singleton') RETURNING id`
+                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('No contexto de padrões de projeto GoF, há um padrão que tem como definição garantir que uma classe tenha apenas uma instância de si mesma e que forneça um ponto global de acesso. Assinale-o. ', 'Builder|Factory|Proxy|Singleton|Strategy', 'Sênior', 'É um padrão criacional.', 'Singleton') RETURNING id`
             )
         );
         // 18
@@ -136,13 +136,13 @@ export class SeedProblems1643636233027 implements MigrationInterface {
                 II. Mediator.
                 III. Proxy.
                 Estes padrões de projeto são, respectivamente, do tipo:
-                ', 'Comportamental, estrutural e comportamental|Criacional, estrutural e comportamental|Estrutural, comportamental e criacional|Estrutural, comportamental e estrutural|Criacional, comportamental e criacional', 'Junior', 'DICA', 'Estrutural, comportamental e estrutural') RETURNING id`
+                ', 'Comportamental, estrutural e comportamental|Criacional, estrutural e comportamental|Estrutural, comportamental e criacional|Estrutural, comportamental e estrutural|Criacional, comportamental e criacional', 'Junior', 'O padrão Mediator é do tipo comportamental.', 'Estrutural, comportamental e estrutural') RETURNING id`
             )
         );
         // 19
         this.ids.push(
             await queryRunner.query(
-                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Padrões de Projeto descrevem soluções para problemas recorrentes no desenvolvimento de sistemas de software orientados a objetos. Um padrão de projeto estabelece um nome e define o problema, a solução, quando se aplica esta solução e suas consequências. Um dos padrões de projeto mais utilizados é o padrão Adapter (adaptador), que tem como função:', 'Garantir a existência de apenas uma instância de uma classe, mantendo um ponto global de acesso ao seu objeto|Adicionar dinamicamente um comportamento a um objeto existente sem alterar o código das classes existentes|Fornecer uma interface para a criação de famílias de objetos correlatos ou dependentes sem a necessidade de especificar a classe concreta destes objetos|Definir novas operações sem alterar as classes dos elementos sobre os quais ele opera|Permitir que classes com interfaces incompatíveis possam interagir', 'Master', 'DICA', 'Permitir que classes com interfaces incompatíveis possam interagir') RETURNING id`
+                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Padrões de Projeto descrevem soluções para problemas recorrentes no desenvolvimento de sistemas de software orientados a objetos. Um padrão de projeto estabelece um nome e define o problema, a solução, quando se aplica esta solução e suas consequências. Um dos padrões de projeto mais utilizados é o padrão Adapter (adaptador), que tem como função:', 'Garantir a existência de apenas uma instância de uma classe, mantendo um ponto global de acesso ao seu objeto|Adicionar dinamicamente um comportamento a um objeto existente sem alterar o código das classes existentes|Fornecer uma interface para a criação de famílias de objetos correlatos ou dependentes sem a necessidade de especificar a classe concreta destes objetos|Definir novas operações sem alterar as classes dos elementos sobre os quais ele opera|Permitir que classes com interfaces incompatíveis possam interagir', 'Master', 'O padrão Adapter permite que você crie uma classe de meio termo que serve como um tradutor entre seu código e a classe antiga, uma classe de terceiros, ou qualquer outra classe com uma interface estranha.', 'Permitir que classes com interfaces incompatíveis possam interagir') RETURNING id`
             )
         );
         // 20
@@ -166,31 +166,31 @@ export class SeedProblems1643636233027 implements MigrationInterface {
                         }
                     }
                 }
-                ', 'Adapter|Composite|Bridge|Strategy', 'Especialista', 'DICA', 'Adapter') RETURNING id`
+                ', 'Adapter|Composite|Bridge|Strategy', 'Especialista', 'É um padrão de projeto do tipo estrutural.', 'Adapter') RETURNING id`
             )
         );
         // 21
         this.ids.push(
             await queryRunner.query(
-                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Um certo padrão de projeto de criação utiliza métodos para criar objetos sem que o chamador precise especificar a classe exata desses objetos, e sem invocar seu construtor diretamente. O método que define a classe a ser instanciada pode estar especificado em uma interface e ser codificado em classes que a implementam, ou então ser implementado em uma classe base e opcionalmente redefinido em uma classe filha. Esse padrão de projeto é conhecido como', 'Bridge|Singleton|Factory Method|Template Method|Visitor', 'Master', 'DICA', 'Factory Method') RETURNING id`
+                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Um certo padrão de projeto de criação utiliza métodos para criar objetos sem que o chamador precise especificar a classe exata desses objetos, e sem invocar seu construtor diretamente. O método que define a classe a ser instanciada pode estar especificado em uma interface e ser codificado em classes que a implementam, ou então ser implementado em uma classe base e opcionalmente redefinido em uma classe filha. Esse padrão de projeto é conhecido como', 'Bridge|Singleton|Factory Method|Template Method|Visitor', 'Master', 'É um padrão de projeto do tipo criacional.', 'Factory Method') RETURNING id`
             )
         );
         // 22
         this.ids.push(
             await queryRunner.query(
-                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Os padrões de projeto de software são classificados de acordo com a funcionalidade. Assim, eles podem ser de criação, estrutural e comportamental. Assinale a alternativa que contém um exemplo de padrão de cada tipo.', 'Adapter, Bridge e Composite|Factory Method, Prototype e Interpreter|Prototype, Singleton e Adapter|Builder, Bridge e Observer|Façade, Bridge e Iterator', 'Pleno', 'DICA', 'Builder, Bridge e Observer') RETURNING id`
+                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Os padrões de projeto de software são classificados de acordo com a funcionalidade. Assim, eles podem ser de criação, estrutural e comportamental. Assinale a alternativa que contém um exemplo de padrão de cada tipo.', 'Adapter, Bridge e Composite|Factory Method, Prototype e Interpreter|Prototype, Singleton e Adapter|Builder, Bridge e Observer|Façade, Bridge e Iterator', 'Pleno', 'Não é a primeira opção.', 'Builder, Bridge e Observer') RETURNING id`
             )
         );
         // 23
         this.ids.push(
             await queryRunner.query(
-                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Padrões de Projeto são descrições dos problemas e suas soluções. Essas soluções devem ter a possibilidade de serem reusadas em diferentes tipos de contextos. Também pode-se definir padrões de projetos como soluções já aprovadas para problemas comuns que foram criados a partir do conhecimento e, principalmente, da experiência. Assinale a alternativa que NÃO apresenta um padrão de projeto reconhecido.', 'Abstract Factory|Primitive Operation|Singleton|Adapter|Template Method', 'Pleno', 'DICA', 'Primitive Operation') RETURNING id`
+                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Padrões de Projeto são descrições dos problemas e suas soluções. Essas soluções devem ter a possibilidade de serem reusadas em diferentes tipos de contextos. Também pode-se definir padrões de projetos como soluções já aprovadas para problemas comuns que foram criados a partir do conhecimento e, principalmente, da experiência. Assinale a alternativa que NÃO apresenta um padrão de projeto reconhecido.', 'Abstract Factory|Primitive Operation|Singleton|Adapter|Template Method', 'Pleno', 'Não é a última opção.', 'Primitive Operation') RETURNING id`
             )
         );
         // 24
         this.ids.push(
             await queryRunner.query(
-                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('É um padrão de projeto usado para criar um objeto sem expor a lógica de sua criação ao cliente, buscando o uso de interfaces comuns.', 'Singleton|Factory|Iterator|Memento|Adapter', 'Especialista', 'DICA', 'Factory') RETURNING id`
+                `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('É um padrão de projeto usado para criar um objeto sem expor a lógica de sua criação ao cliente, buscando o uso de interfaces comuns.', 'Singleton|Factory|Iterator|Memento|Adapter', 'Especialista', 'É um padrão de projeto do tipo criacional.', 'Factory') RETURNING id`
             )
         );
         // 25
@@ -198,7 +198,7 @@ export class SeedProblems1643636233027 implements MigrationInterface {
             await queryRunner.query(
                 `INSERT INTO "problems" (description, options, level, tips, "correctAnswer") VALUES ('Um certo padrão de projeto, em Engenharia de Software, consiste em definir o esqueleto de um algoritmo em uma operação, delegando alguns de seus passos a subclasses. Essas subclasses redefinem esses passos sem alterar a estrutura do algoritmo.
                 Esse padrão de projeto é conhecido como:
-                ', 'Template Method|Singleton|Strategy|Chain of Responsibility|Command', 'Junior', 'DICA', 'Template Method') RETURNING id`
+                ', 'Template Method|Singleton|Strategy|Chain of Responsibility|Command', 'Junior', 'É um padrão de projeto do tipo comportamental.', 'Template Method') RETURNING id`
             )
         );
         // 26
@@ -210,7 +210,7 @@ export class SeedProblems1643636233027 implements MigrationInterface {
                 III. O padrão Template Method define métodos templates para a criação de objetos que seguem uma determinada regra.
                 IV. O padrão Template Method permite definir uma família de algoritmos que podem ser substituídos dinamicamente.
                 Estão corretas as afirmativas:
-                ', 'I e II|I e III|III e IV|II e IV', 'Master', 'DICA', 'I e II') RETURNING id`
+                ', 'I e II|I e III|III e IV|II e IV', 'Master', 'Não é a terceira opção.', 'I e II') RETURNING id`
             )
         );
     }
