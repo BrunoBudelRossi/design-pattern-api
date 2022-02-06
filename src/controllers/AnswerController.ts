@@ -158,14 +158,14 @@ class AnswerController {
             const { userId } = req.params;
             const repository = getRepository(Answer);
 
-            await repository.query(
+            const result = await repository.query(
                 `DELETE FROM answers WHERE "userId" = '${userId}'`
             );
 
             return res.status(200).json({
                 status: 'success',
                 message: 'All answers from user deleted',
-                payload: null,
+                payload: result[0],
             });
         } catch (err) {
             return res.status(500).json({
