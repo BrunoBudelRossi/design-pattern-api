@@ -4,6 +4,10 @@ import AnswerController from '../controllers/AnswerController';
 const answerRouter = Router({ mergeParams: true });
 
 answerRouter
+    .route('/deleteAnswersFromUser')
+    .delete(AnswerController.deleteAnswersFromUser);
+
+answerRouter
     .route('/')
     .get(AnswerController.index)
     .post(AnswerController.store);

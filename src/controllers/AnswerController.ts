@@ -149,6 +149,34 @@ class AnswerController {
             });
         }
     }
+
+    async deleteAnswersFromUser(
+        req: Request,
+        res: Response
+    ): Promise<Response> {
+        try {
+            const { userId } = req.params;
+            const repository = getRepository(Answer);
+
+            await repository.query(
+                `DELETE FROM answers WHERE "userId" = '${userId}'`
+            );
+
+            return res.status(200).json({
+                status: 'success',
+                message: 'All answers from user deleted',
+                payload: null,
+            });
+        } catch (err) {
+            return res.status(500).json({
+                status: 'error',
+                message:
+                    (err as Error).message ||
+                    'Error while delete all answers from user',
+                payload: [err],
+            });
+        }
+    }
 }
 
 export default new AnswerController();
