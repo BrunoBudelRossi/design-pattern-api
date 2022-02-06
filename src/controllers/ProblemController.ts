@@ -7,7 +7,7 @@ class ProblemController {
         try {
             const repository = getRepository(Problem);
 
-            const problems = await repository.find();
+            const problems = await repository.find({ order: { level: 'ASC' } });
 
             const result = problems.map((problem) => {
                 const { id, description, options, tips, correctAnswer, level } =
